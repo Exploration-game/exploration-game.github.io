@@ -34,11 +34,11 @@ const getViews = async (repo, callback) => {
 
 async function getViewSetting() {
     if (localStorage.getItem('viewCount') === "true") {
-        await viewCount("GHub-fr.github.io");
+        await viewCount("exploration-game.github.io");
     }
     if (devMode() === false) {
         if (localStorage.getItem('viewCount') == null) {
-            await viewCount("GHub-fr.github.io");
+            await viewCount("exploration-game.github.io");
         }
     }
 }

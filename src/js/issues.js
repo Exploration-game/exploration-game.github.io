@@ -1,4 +1,4 @@
-start("Ghub-fr");
+start("Exploration-game");
 
 async function start(orgs) {
     await getRepo(orgs);

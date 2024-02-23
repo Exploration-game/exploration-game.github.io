@@ -1,5 +1,5 @@
 (async function () {
-    await getEvents(5, "GHub-fr");
+    await getEvents(5, "Exploration-game");
 })();
 
 

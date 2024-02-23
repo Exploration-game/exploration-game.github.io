@@ -1,17 +1,17 @@
 (async function () {
     await getCommits(3, ".github");
-    await getCommits(3, "Ghub-fr.github.io");
-    await getCommits(3, "bot");
-    await getCommits(3, "server");
-    await getCommits(3, "plugin");
-    await getCommits(3, "resourcePack");
+    await getCommits(3, "exploration-game.github.io");
+    //await getCommits(3, "bot");
+    //await getCommits(3, "server");
+    //await getCommits(3, "plugin");
+    //await getCommits(3, "resourcePack");
 })();
 
 
 async function getCommits(amount, repoName) {
     console.log("Getting Github-Commits : " + repoName);
 
-    var x = await gather('https://api.github.com/repos/GHub-FR/' + repoName + '/commits');
+    var x = await gather('https://api.github.com/repos/Exploration-game/' + repoName + '/commits');
     for (let i = 0; i < amount; i++) {
         var y = getValue(x[i], "sha");
         if (String(y).length >= 8) {
@@ -42,7 +42,7 @@ async function getCommits(amount, repoName) {
         var TextDate = document.createElement("p");
         TextDate.textContent = date2;
         var link = document.createElement("a");
-        link.href = "https://github.com/GHub-fr/" + repoName + "/commit/" + y;
+        link.href = "https://github.com/Exploration-game/" + repoName + "/commit/" + y;
         var sha = document.createElement("p");
         sha.textContent = y2;
         var logo = document.createElement("img");

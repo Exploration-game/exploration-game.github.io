@@ -1,5 +1,5 @@
 (async function () {
-    await getUpdate("Ghub-fr.github.io");
+    await getUpdate("exploration-game.github.io");
 })();
 
 
@@ -10,13 +10,13 @@ async function getUpdate(repoName) {
     var title = div.querySelector("#title");
     title.textContent += repoName;
 
-    var x = await gather('https://api.github.com/repos/GHub-FR/' + repoName + '/commits');
+    var x = await gather('https://api.github.com/repos/Exploration-game/' + repoName + '/commits');
     var y = getValue(x[0], "sha");
     if (String(y).length >= 8) {
         var y2 = String(y.substring(0, 12) + "...");
     }
 
-    document.getElementById("hash").href = 'https://github.com/GHub-fr/' + repoName + '/commit/' +y;
+    document.getElementById("hash").href = 'https://github.com/Exploration-game/' + repoName + '/commit/' +y;
     document.getElementById("hash").textContent = "📊 Hash : " + y2;
 
     var z = getValue(x[0], "commit")
@@ -39,10 +39,10 @@ async function getUpdate(repoName) {
 
     document.getElementById("author-image").src = avatarGatherValue;
 
-    var deployment = await gather('https://api.github.com/repos/GHub-fr/' + repoName + '/deployments');
+    var deployment = await gather('https://api.github.com/repos/Exploration-game/' + repoName + '/deployments');
     var deploymentID = await getValue(deployment[0], "id");
 
-    var deploymentStatus = await gather('https://api.github.com/repos/Ghub-fr/' + repoName + '/deployments/' + deploymentID + '/statuses');
+    var deploymentStatus = await gather('https://api.github.com/repos/Exploration-game/' + repoName + '/deployments/' + deploymentID + '/statuses');
     var deploymentStatusState = await getValue(deploymentStatus[0], "state");
     var deploymentStatusUrl = await getValue(deploymentStatus[0], "log_url");
 
